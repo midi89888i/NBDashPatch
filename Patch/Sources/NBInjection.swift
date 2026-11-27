@@ -91,7 +91,7 @@ final class NBSOCInjector {
     }
 
     private func wrap(cls: AnyClass) {
-        let key = UnsafeRawPointer(Unmanaged.passUnretained(cls).toOpaque())
+        let key = unsafeBitCast(cls, to: UnsafeRawPointer.self)
         guard !hookedClasses.contains(key) else { return }
         hookedClasses.insert(key)
         guard let method = class_getInstanceMethod(cls, Self.selector) else { return }

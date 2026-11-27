@@ -23,6 +23,7 @@
 		A20000000000000000000E /* ANTBMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000E; };
 		A20000000000000000000F /* ANTBMSProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000F; };
 		A200000000000000000010 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000010; };
+		A200000000000000000011 /* NBPatchLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000011; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		B20000000000000000000E /* ANTBMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANTBMSClient.swift; sourceTree = "<group>"; };
 		B20000000000000000000F /* ANTBMSProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANTBMSProtocol.swift; sourceTree = "<group>"; };
 		B200000000000000000010 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		B200000000000000000011 /* NBPatchLoader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NBPatchLoader.m; sourceTree = "<group>"; };
 		C200000000000000000001 /* NBDashPatch.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = NBDashPatch.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +85,7 @@
 				B20000000000000000000E /* ANTBMSClient.swift */,
 				B20000000000000000000F /* ANTBMSProtocol.swift */,
 				B200000000000000000010 /* Localization.swift */,
+				B200000000000000000011 /* NBPatchLoader.m */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				A20000000000000000000E /* ANTBMSClient.swift in Sources */,
 				A20000000000000000000F /* ANTBMSProtocol.swift in Sources */,
 				A200000000000000000010 /* Localization.swift in Sources */,
+				A200000000000000000011 /* NBPatchLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

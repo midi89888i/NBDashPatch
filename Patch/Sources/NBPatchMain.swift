@@ -61,11 +61,10 @@ final class NBPatch: NSObject {
     var logs: [String] { logLines }
 }
 
-/// Constructor: runs when the dylib is loaded into the host process.
-@objc class NBPatchLoader: NSObject {
-    @objc static func load() {
-        // `load` runs at dylib load time, before the host app's UI exists.
-        // Defer real startup to main runloop.
+/// Bootstrap entry, invoked from the Objective-C +load in NBPatchLoader.m
+/// as soon as the dylib is mapped into the host process.
+@objc public class NBPatchBootstrap: NSObject {
+    @objc public static func start() {
         DispatchQueue.main.async {
             NBPatch.shared.start()
         }
