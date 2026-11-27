@@ -6,6 +6,7 @@ import UIKit
 /// sends the 0x71 navigation-on command, so the instrument cluster is already
 /// projecting when the user starts streaming in the host UI — no need to ever
 /// open the official Ninebot app.
+@MainActor
 final class NBAutoProjection {
     static let shared = NBAutoProjection()
 

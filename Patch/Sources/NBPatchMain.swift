@@ -6,6 +6,7 @@ import UIKit
 /// Entry point for the injected patch. Everything here is silent-integration:
 /// no floating windows. ANT BMS data flows into the host app's own battery
 /// pipeline; the vehicle projection wake hooks the host's streaming startup.
+@MainActor
 final class NBPatch: NSObject {
     static let shared = NBPatch()
 
@@ -66,7 +67,9 @@ final class NBPatch: NSObject {
 @objc public class NBPatchBootstrap: NSObject {
     @objc public static func start() {
         DispatchQueue.main.async {
-            NBPatch.shared.start()
+            MainActor.assumeIsolated {
+                NBPatch.shared.start()
+            }
         }
     }
 }

@@ -7,6 +7,7 @@ import UIKit
 /// The card is added as a plain subview of the host's BLE-settings page
 /// controller view (inside the view hierarchy, scrolling with the page),
 /// not as a separate floating window.
+@MainActor
 final class NBPairingIntegration: NSObject {
     static let shared = NBPairingIntegration()
 
