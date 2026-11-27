@@ -24,12 +24,15 @@ jobs:
             -sdk iphoneos -arch arm64 \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
             CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" \
+            CONFIGURATION_BUILD_DIR="$(pwd)/build" \
             build
+          ls -la build/ | head
 
       - name: Inject dylib into original app
         run: |
-          DYLIB=$(find ~/Library/Developer/Xcode/DerivedData -name "NBDashPatch.dylib" -path "*Release-iphoneos*" | head -1)
+          DYLIB="$(pwd)/build/NBDashPatch.dylib"
           echo "dylib at: $DYLIB"
+          test -f "$DYLIB" || { echo "dylib missing!"; ls -R build | head -30; exit 1; }
           mkdir -p work
           cd work
           unzip -q ../original.ipa
