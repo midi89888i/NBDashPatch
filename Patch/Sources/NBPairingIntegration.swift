@@ -27,7 +27,8 @@ final class NBPairingIntegration: NSObject {
         // watch the host view hierarchy: when a settings/host controller appears,
         // append our card to its scroll content
         pollTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { [weak self] _ in
-            self?.tryAttachCard()
+            guard let self else { return }
+            MainActor.assumeIsolated { self.tryAttachCard() }
         }
     }
 
@@ -133,7 +134,8 @@ final class NBPairingIntegration: NSObject {
 
         refreshTimer?.invalidate()
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            self?.refresh()
+            guard let self else { return }
+            MainActor.assumeIsolated { self.refresh() }
         }
         refresh()
     }
@@ -167,14 +169,16 @@ final class NBPairingIntegration: NSObject {
         vehicle.startScan()
         // populate after scan has had time
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) { [weak self] in
-            self?.populateVehicles()
+            guard let self else { return }
+            MainActor.assumeIsolated { self.populateVehicles() }
         }
     }
 
     @objc private func scanBMS() {
         bms?.scan()
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
-            self?.populateBMS()
+            guard let self else { return }
+            MainActor.assumeIsolated { self.populateBMS() }
         }
     }
 
@@ -198,7 +202,8 @@ final class NBPairingIntegration: NSObject {
             return
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) { [weak self] in
-            self?.waitForPairingReady(attempts: attempts + 1)
+            guard let self else { return }
+            MainActor.assumeIsolated { self.waitForPairingReady(attempts: attempts + 1) }
         }
     }
 
@@ -221,7 +226,7 @@ final class NBPairingIntegration: NSObject {
         b.titleLabel?.font = .systemFont(ofSize: 11)
         b.titleLabel?.numberOfLines = 0
         b.contentHorizontalAlignment = .leading
-        b.addAction(UIAction { _ in handler() }, for: .touchUpInside)
+        b.addAction(UIAction { _ in MainActor.assumeIsolated { handler() } }, for: .touchUpInside)
         deviceButtons?.addArrangedSubview(b)
     }
 
@@ -239,6 +244,9 @@ final class NBPairingIntegration: NSObject {
         }
         if let selected = vehicle.garage.selected {
             text += "（已选：\(selected.name)）"
+        }
+        if vehicle.garage.selected != nil {
+            text = NBAutoProjection.shared.statusHint + "\n" + text
         }
         statusLabel?.text = text
 

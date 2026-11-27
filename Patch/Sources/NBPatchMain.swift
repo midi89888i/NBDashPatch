@@ -41,6 +41,7 @@ final class NBPatch: NSObject {
         NBSOCInjector.shared.install()
 
         // 4. auto-projection: keep navigation armed once a vehicle is paired
+        NBAutoProjection.shared.onLog = { [weak self] in self?.log($0) }
         NBAutoProjection.shared.install(vehicle: conn)
 
         // 5. install the pairing integration into the host UI (native, in-page)
