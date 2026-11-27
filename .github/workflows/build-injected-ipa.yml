@@ -1,0 +1,64 @@
+name: Build injected NinebotDash IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download original NinebotDash IPA
+        run: |
+          curl -sL -o original.ipa "https://github.com/zyfzsi/NinebotDash/releases/download/v1.3.1-beta.1/NinebotDash-1.3.0-battery-test-unsigned.ipa"
+          ls -la original.ipa
+
+      - name: Build patch dylib
+        run: |
+          xcodebuild -project Patch/Patch.xcodeproj \
+            -target NBDashPatch \
+            -configuration Release \
+            -sdk iphoneos -arch arm64 \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" DEVELOPMENT_TEAM="" \
+            build
+
+      - name: Inject dylib into original app
+        run: |
+          DYLIB=$(find ~/Library/Developer/Xcode/DerivedData -name "NBDashPatch.dylib" -path "*Release-iphoneos*" | head -1)
+          echo "dylib at: $DYLIB"
+          mkdir -p work
+          cd work
+          unzip -q ../original.ipa
+          cp "$DYLIB" Payload/NinebotDash.app/NBDashPatch.dylib
+          python3 ../inject.py Payload/NinebotDash.app/NinebotDash NBDashPatch.dylib
+          rm -f ../NinebotDash-1.3.1-ANT-injected.ipa
+          zip -qr ../NinebotDash-1.3.1-ANT-injected.ipa Payload
+          cd ..
+          shasum -a 256 NinebotDash-1.3.1-ANT-injected.ipa > NinebotDash-1.3.1-ANT-injected.ipa.sha256
+          ls -la NinebotDash-1.3.1-ANT-injected.ipa
+
+      - name: Verify injection
+        run: |
+          python3 - <<'PYEOF'
+          import zipfile, struct
+          z = zipfile.ZipFile('NinebotDash-1.3.1-ANT-injected.ipa')
+          print('entries:', len(z.namelist()))
+          assert 'Payload/NinebotDash.app/NBDashPatch.dylib' in z.namelist(), 'dylib missing!'
+          data = z.read('Payload/NinebotDash.app/NinebotDash')
+          ncmds, sizeofcmds = struct.unpack('<II', data[16:24])
+          print('ncmds:', ncmds, 'sizeofcmds:', sizeofcmds)
+          assert b'@executable_path/NBDashPatch.dylib' in data, 'load command missing!'
+          print('injection verified OK')
+          PYEOF
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: NinebotDash-injected-ipa
+          path: |
+            NinebotDash-1.3.1-ANT-injected.ipa
+            NinebotDash-1.3.1-ANT-injected.ipa.sha256

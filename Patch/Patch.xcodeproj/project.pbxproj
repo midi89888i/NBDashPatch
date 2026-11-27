@@ -1,0 +1,229 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A200000000000000000001 /* NBPatchMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000001; };
+		A200000000000000000002 /* NBInjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000002; };
+		A200000000000000000003 /* NBPairingIntegration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000003; };
+		A200000000000000000004 /* NBAutoProjection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000004; };
+		A200000000000000000005 /* NinebotVehicleConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000005; };
+		A200000000000000000006 /* NinebotVehicleKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000006; };
+		A200000000000000000007 /* NinebotVehicleSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000007; };
+		A200000000000000000008 /* V2Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000008; };
+		A200000000000000000009 /* VehicleBLEFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000009; };
+		A20000000000000000000A /* VehicleNavigationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000A; };
+		A20000000000000000000B /* VehicleAuthenticationAttempts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000B; };
+		A20000000000000000000C /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000C; };
+		A20000000000000000000D /* DiscoveryEvidence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000D; };
+		A20000000000000000000E /* ANTBMSClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000E; };
+		A20000000000000000000F /* ANTBMSProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20000000000000000000F; };
+		A200000000000000000010 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200000000000000000010; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B200000000000000000001 /* NBPatchMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBPatchMain.swift; sourceTree = "<group>"; };
+		B200000000000000000002 /* NBInjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBInjection.swift; sourceTree = "<group>"; };
+		B200000000000000000003 /* NBPairingIntegration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBPairingIntegration.swift; sourceTree = "<group>"; };
+		B200000000000000000004 /* NBAutoProjection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NBAutoProjection.swift; sourceTree = "<group>"; };
+		B200000000000000000005 /* NinebotVehicleConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinebotVehicleConnection.swift; sourceTree = "<group>"; };
+		B200000000000000000006 /* NinebotVehicleKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinebotVehicleKeyStore.swift; sourceTree = "<group>"; };
+		B200000000000000000007 /* NinebotVehicleSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NinebotVehicleSelection.swift; sourceTree = "<group>"; };
+		B200000000000000000008 /* V2Crypto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2Crypto.swift; sourceTree = "<group>"; };
+		B200000000000000000009 /* VehicleBLEFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleBLEFrame.swift; sourceTree = "<group>"; };
+		B20000000000000000000A /* VehicleNavigationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleNavigationPolicy.swift; sourceTree = "<group>"; };
+		B20000000000000000000B /* VehicleAuthenticationAttempts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAuthenticationAttempts.swift; sourceTree = "<group>"; };
+		B20000000000000000000C /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
+		B20000000000000000000D /* DiscoveryEvidence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryEvidence.swift; sourceTree = "<group>"; };
+		B20000000000000000000E /* ANTBMSClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANTBMSClient.swift; sourceTree = "<group>"; };
+		B20000000000000000000F /* ANTBMSProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANTBMSProtocol.swift; sourceTree = "<group>"; };
+		B200000000000000000010 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		C200000000000000000001 /* NBDashPatch.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = NBDashPatch.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D200000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E200000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				E200000000000000000002 /* Sources */,
+				E200000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E200000000000000000002 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B200000000000000000001 /* NBPatchMain.swift */,
+				B200000000000000000002 /* NBInjection.swift */,
+				B200000000000000000003 /* NBPairingIntegration.swift */,
+				B200000000000000000004 /* NBAutoProjection.swift */,
+				B200000000000000000005 /* NinebotVehicleConnection.swift */,
+				B200000000000000000006 /* NinebotVehicleKeyStore.swift */,
+				B200000000000000000007 /* NinebotVehicleSelection.swift */,
+				B200000000000000000008 /* V2Crypto.swift */,
+				B200000000000000000009 /* VehicleBLEFrame.swift */,
+				B20000000000000000000A /* VehicleNavigationPolicy.swift */,
+				B20000000000000000000B /* VehicleAuthenticationAttempts.swift */,
+				B20000000000000000000C /* Advertisement.swift */,
+				B20000000000000000000D /* DiscoveryEvidence.swift */,
+				B20000000000000000000E /* ANTBMSClient.swift */,
+				B20000000000000000000F /* ANTBMSProtocol.swift */,
+				B200000000000000000010 /* Localization.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E200000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C200000000000000000001 /* NBDashPatch.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F200000000000000000001 /* NBDashPatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = G200000000000000000001 /* Build configuration list for PBXNativeTarget "NBDashPatch" */;
+			buildPhases = (
+				H200000000000000000001 /* Sources */,
+				D200000000000000000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NBDashPatch;
+			productName = NBDashPatch;
+			productReference = C200000000000000000001 /* NBDashPatch.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		J200000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = K200000000000000000001 /* Build configuration list for PBXProject "Patch" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E200000000000000000001;
+			productRefGroup = E200000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F200000000000000000001 /* NBDashPatch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		H200000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A200000000000000000001 /* NBPatchMain.swift in Sources */,
+				A200000000000000000002 /* NBInjection.swift in Sources */,
+				A200000000000000000003 /* NBPairingIntegration.swift in Sources */,
+				A200000000000000000004 /* NBAutoProjection.swift in Sources */,
+				A200000000000000000005 /* NinebotVehicleConnection.swift in Sources */,
+				A200000000000000000006 /* NinebotVehicleKeyStore.swift in Sources */,
+				A200000000000000000007 /* NinebotVehicleSelection.swift in Sources */,
+				A200000000000000000008 /* V2Crypto.swift in Sources */,
+				A200000000000000000009 /* VehicleBLEFrame.swift in Sources */,
+				A20000000000000000000A /* VehicleNavigationPolicy.swift in Sources */,
+				A20000000000000000000B /* VehicleAuthenticationAttempts.swift in Sources */,
+				A20000000000000000000C /* Advertisement.swift in Sources */,
+				A20000000000000000000D /* DiscoveryEvidence.swift in Sources */,
+				A20000000000000000000E /* ANTBMSClient.swift in Sources */,
+				A20000000000000000000F /* ANTBMSProtocol.swift in Sources */,
+				A200000000000000000010 /* Localization.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		L200000000000000000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		L200000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				CODE_SIGN_IDENTITY = "";
+				DEVELOPMENT_TEAM = "";
+				DYLIB_INSTALL_NAME_BASE = "@executable_path";
+				ENABLE_BITCODE = NO;
+				EXECUTABLE_EXTENSION = dylib;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = "";
+				MACH_O_TYPE = mh_dylib;
+				PRODUCT_BUNDLE_PACKAGE_TYPE = BNDL;
+				PRODUCT_MODULE_NAME = NBDashPatch;
+				PRODUCT_NAME = NBDashPatch;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		G200000000000000000001 /* Build configuration list for PBXNativeTarget "NBDashPatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				L200000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		K200000000000000000001 /* Build configuration list for PBXProject "Patch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				L200000000000000000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = J200000000000000000001 /* Project object */;
+}
